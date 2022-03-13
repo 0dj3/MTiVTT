@@ -1,4 +1,5 @@
-from main import Student, Specialization
+from main import Student, Specialization, Group, Subject, ExamPoints, Exam
+from datetime import date
 import unittest
 
 
@@ -7,9 +8,44 @@ class TestClass(unittest.TestCase):
         student = Student("Иннокентьев Владимир", 172531)
         self.assertEqual("Иннокентьев Владимир", student.fio)
         self.assertEqual(172531, student.code)
+
     def test_class_specialization(self):
-        spec = Specialization("М-ФИИТ-21")
-        self.assertEqual("М-ФИИТ-21", spec.name)
+        spec = Specialization("ФИИТ")
+        self.assertEqual("ФИИТ", spec.name)
+
+    def test_class_group(self):
+        spec = Specialization("ФИИТ")
+        group = Group(spec, 2021)
+        self.assertEqual("ФИИТ-21", group.name)
+        self.assertEqual(spec, group.spec)
+        self.assertEqual(2021, group.year)
+
+    def test_class_subject(self):
+        spec = Specialization("ФИИТ")
+        subject = Subject("Б1.Б.22", "Основы программирования", 1, 144, spec)
+        self.assertEqual("Б1.Б.22", subject.code)
+        self.assertEqual("Основы программирования", subject.name)
+        self.assertEqual(1, subject.semester)
+        self.assertEqual(144, subject.hours)
+        self.assertEqual(spec, subject.spec)
+
+    def test_exam_points(self):
+        student = Student("Иннокентьев Владимир", 172531)
+        examPoints = ExamPoints(student, 55.4, 30.0)
+        self.assertEqual(student, examPoints.student)
+        self.assertEqual(55.4, examPoints.inPoints)
+        self.assertEqual(30.0, examPoints.examPoints)
+
+    def test_exam_points(self):
+        spec = Specialization("ФИИТ")
+        subject = Subject("Б1.Б.22", "Основы программирования", 1, 144, spec)
+        d = date(2018, 1, 10)
+        exam = Exam(subject, d, "2018-2019", "Эверстов Владимир Васильевич")
+        self.assertEqual(subject, exam.subject)
+        self.assertEqual(d, exam.examDate)
+        self.assertEqual("2018-2019", exam.year)
+        self.assertEqual("Эверстов Владимир Васильевич", exam.lectFio)
+
 
 if __name__ == '__main__':
     unittest.main()
