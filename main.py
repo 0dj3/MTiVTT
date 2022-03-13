@@ -262,9 +262,3 @@ class Exam:
         if not re.fullmatch(pattern, new_lectFio):
             raise Exception("U vas incorrect input")
         self.lectFio = new_lectFio
-
-
-if __name__ == "__main__":
-    s = Specialization("ФИИТ")
-    g = Group(s, 2021)
-    print(g.getName())
