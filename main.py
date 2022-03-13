@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from pydantic.dataclasses import dataclass
 import re
 
 @dataclass
@@ -7,9 +7,9 @@ class Student:
     code: int
 
     # Инициализация (Проблема с чтением типа)
-    def __init(self, value_fio:str, value_code:int):
-        self.fio = value_fio
-        self.code = value_code
+    def __init__(self, value_fio:str, value_code:int):
+        self.setFio(value_fio)
+        self.setCode(value_code)
 
     # Задать ФИО
     def setFio(self, new_fio):
@@ -41,7 +41,5 @@ class Student:
         return self.code
 
 if __name__ == "__main__":
-    a = Student(34,23)
-    a.setFio("Name Fio")
-    a.setCode(12323)
-    print(a.getCode())
+    a = Student("Иннокентьев Владимир",223333)
+    print(a.getFio())
