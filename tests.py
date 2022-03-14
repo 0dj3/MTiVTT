@@ -36,7 +36,7 @@ class TestClass(unittest.TestCase):
         self.assertEqual(55.4, examPoints.inPoints)
         self.assertEqual(30.0, examPoints.examPoints)
 
-    def test_exam_points(self):
+    def test_exam(self):
         spec = Specialization("ФИИТ")
         subject = Subject("Б1.Б.22", "Основы программирования", 1, 144, spec)
         d = date(2018, 1, 10)
