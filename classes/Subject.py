@@ -14,6 +14,3 @@ def getData(file):
         hours = int(data.get(columns[4])[i])  # Количество часов
         subjects.append(Subject(code, name, sem, hours, spec))  # Добавление дисциплины в лист
     return subjects
-
-
-print(getData('../data/subject.xlsx')[0])
