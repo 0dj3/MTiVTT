@@ -14,3 +14,13 @@ def getData(file):
         hours = int(data.get(columns[4])[i])  # Количество часов
         subjects.append(Subject(code, name, sem, hours, spec))  # Добавление дисциплины в лист
     return subjects
+
+
+def getSubject(subjects, subject_name):
+    listSubj = list()
+    for subject in subjects:
+        if subject.name == subject_name:
+            listSubj.append(subject)
+    return listSubj
+
+# print(getSubject(getData('../data/subject.xlsx'),"Основы программирования"))
