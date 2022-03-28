@@ -44,6 +44,11 @@ class TestAddSpec(unittest.TestCase):
         inst.add_spec(sp1)
         self.assertEqual(len(inst.specs), 2)
 
+    def test_seven(self):  # Ошибка при добавлении другого типа
+        inst = institute.Institute()
+        inst.add_spec(1)
+        self.assertEqual(len(inst.specs), 1)
+
 
 if __name__ == '__main__':
     unittest.main()

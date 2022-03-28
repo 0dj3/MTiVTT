@@ -61,7 +61,7 @@ class TestAddExam(unittest.TestCase):
         inst.add_exam(ex)
         self.assertEqual(len(inst.exams), 2)
 
-    def test_seven(self):  # Проверка на повтороный ввод (Корректный)
+    def test_eight(self):  # Проверка на повтороный ввод (Корректный)
         sp = Specialization("ФИИТ")
         su = Subject("Б1.Б.22", "Основы программирования", 1, 144, sp)
         sp1 = Specialization("ИВТ")
