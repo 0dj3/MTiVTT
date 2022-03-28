@@ -36,7 +36,7 @@ class TestAddSpec(unittest.TestCase):
         inst.add_spec(sp1)
         self.assertEqual(len(inst.specs), 2)
 
-    def test_six(self): # Проверка на повтороный ввод (Корректный)
+    def test_six(self):  # Проверка на повтороный ввод (Корректный)
         sp = Specialization("ФИИТ")
         sp1 = Specialization("ИВТ")
         inst = institute.Institute()
