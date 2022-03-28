@@ -189,8 +189,10 @@ class ExamPoints:
     def setInPoints(self, new_inPoints):
         if type(new_inPoints) != float:
             raise Exception("Konkretno wrong input")
-        if 70 < new_inPoints < 0:
-            raise Exception("Fail s ballami")
+        if 70.0 < new_inPoints:
+            raise Exception("Fail s ballami mnogo")
+        if 0.0 > new_inPoints:
+            raise Exception("Fail s ballami malo")
         self.inPoints = new_inPoints
 
     def getInPoints(self):
@@ -199,8 +201,10 @@ class ExamPoints:
     def setExamPoints(self, new_examPoints):
         if type(new_examPoints) != float:
             raise Exception("Konkretno wrong input")
-        if new_examPoints > 30:
-            raise Exception("Fail s ballami")
+        if 30.0 < new_examPoints:
+            raise Exception("Fail s ballami mnogo")
+        if 0.0 > new_examPoints:
+            raise Exception("Fail s ballami malo")
         self.examPoints = new_examPoints
 
     def getExamPoints(self):

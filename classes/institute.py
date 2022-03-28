@@ -1,4 +1,4 @@
-from main import Specialization, Group, Student, Exam, Subject
+from main import Specialization, Group, Student, Exam, Subject, ExamPoints
 
 
 class Institute:
@@ -8,6 +8,7 @@ class Institute:
         self.students = []
         self.exams = []
         self.subjects = []
+        self.exam_points = []
 
     def add_spec(self, spec: Specialization):
         if type(spec) != Specialization:
@@ -50,4 +51,9 @@ class Institute:
             if i == subj:
                 raise Exception("Takoi subj uje est`")
         self.subjects.append(subj)
+
+    def add_exam_points(self, exam_points: ExamPoints):
+        if type(exam_points) != ExamPoints:
+            raise Exception("Type peremennoi ne exampoints")
+        self.exam_points.append(exam_points)
 
