@@ -3,6 +3,7 @@ from functions import getSubject
 from datetime import date
 import unittest
 
+
 class TestClass(unittest.TestCase):
     def test_class_student(self):
         student = Student("Иннокентьев Владимир", 172531)
@@ -45,6 +46,7 @@ class TestClass(unittest.TestCase):
         self.assertEqual(d, exam.examDate)
         self.assertEqual("2018-2019", exam.year)
         self.assertEqual("Эверстов Владимир Васильевич", exam.lectFio)
+
 
 if __name__ == '__main__':
     unittest.main()

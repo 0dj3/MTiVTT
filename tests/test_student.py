@@ -3,7 +3,7 @@ from classes import institute
 import unittest
 
 
-class TestAddSpec(unittest.TestCase):
+class TestAddStudent(unittest.TestCase):
     def test_one(self):  # Корректный тест
         stud = Student("Иннокентьев Владимир Евгеньевич", 175351)
         inst = institute.Institute()
