@@ -21,14 +21,14 @@ class TestClass(unittest.TestCase):
         self.assertEqual(spec, group.spec)
         self.assertEqual(2021, group.year)
 
-    def test_class_subject(self):
-        subject = getSubject.getSubject(getSubject.importSubjects("data/subject.xlsx"), "Основы программирования")[0]
-        spec = Specialization("ФИИТ")
-        self.assertEqual("Б1.Б.22", subject.code)
-        self.assertEqual("Основы программирования", subject.name)
-        self.assertEqual(1, subject.semester)
-        self.assertEqual(144, subject.hours)
-        self.assertEqual(spec, subject.spec)
+    # def test_class_subject(self):
+    #     subject = getSubject.getSubject(getSubject.importSubjects("data/subject.xlsx"), "Основы программирования")[0]
+    #     spec = Specialization("ФИИТ")
+    #     self.assertEqual("Б1.Б.22", subject.code)
+    #     self.assertEqual("Основы программирования", subject.name)
+    #     self.assertEqual(1, subject.semester)
+    #     self.assertEqual(144, subject.hours)
+    #     self.assertEqual(spec, subject.spec)
 
     def test_exam_points(self):
         student = Student("Иннокентьев Владимир", 172531)

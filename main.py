@@ -34,7 +34,7 @@ class Student:
         if type(new_code) != int:
             raise Exception("U vas wrong type")
         # Проверка введённых данных на номер студента
-        if not re.fullmatch(r'[0-9]{6}', str(new_code)):
+        if not re.fullmatch(r'[1-9][0-9]{5}', str(new_code)):
             raise Exception("U vas incorrect input")
         self.code = new_code
 
