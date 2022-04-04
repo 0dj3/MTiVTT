@@ -17,8 +17,12 @@ def importSubjects(file):
 
 
 def getSubject(subjects, subject_name):
+    if type(subject_name) != str:
+        raise Exception("type name ne str")
     listSubj = list()
     for subject in subjects:
         if subject.name == subject_name:
             listSubj.append(subject)
+    if len(listSubj) == 0:
+        raise Exception("takogo subject net?")
     return listSubj
