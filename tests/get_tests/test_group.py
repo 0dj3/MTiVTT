@@ -14,7 +14,8 @@ class TestGetStudent(unittest.TestCase):
         sp = Specialization("ФИИТ")
         group = Group(sp, 2021)
         group_test = getGroup.getGroup(self.dataGroup, group.name)[0]
-        self.assertEqual(group_test, group)
+        self.assertEqual(group_test.name, group.name)
+
 
     def test_three(self):  # Ошибка в названии группы
         sp = Specialization("ФИИТ")

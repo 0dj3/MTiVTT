@@ -31,8 +31,11 @@ class TestClass(unittest.TestCase):
     #     self.assertEqual(spec, subject.spec)
 
     def test_exam_points(self):
+        spec = Specialization("ФИИТ")
+        group = Group(spec, 2021)
         student = Student("Иннокентьев Владимир", 172531)
-        examPoints = ExamPoints(student, 55.4, 30.0)
+        d = date(2021, 1, 10)
+        examPoints = ExamPoints(student, 55.4, 30.0, d, group.name)
         self.assertEqual(student, examPoints.student)
         self.assertEqual(55.4, examPoints.inPoints)
         self.assertEqual(30.0, examPoints.examPoints)

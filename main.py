@@ -179,12 +179,16 @@ class ExamPoints:
     student: Student
     inPoints: float
     examPoints: float
+    exDate: date
+    groupName: str
 
     def __init__(self, value_student: Student, value_inPoints: float,
-                 value_examPoints: float):
+                 value_examPoints: float, value_date: date, value_groupName: str):
         self.setStudent(value_student)
         self.setInPoints(value_inPoints)
         self.setExamPoints(value_examPoints)
+        self.setExDate(value_date)
+        self.setGroupName(value_groupName)
 
     def setInPoints(self, new_inPoints):
         if type(new_inPoints) != float:
@@ -217,6 +221,24 @@ class ExamPoints:
 
     def getStudent(self):
         return self.student
+
+    def setExDate(self, exDate):
+        if type(exDate) != date:
+            raise Exception("Date ne date)")
+        self.exDate = exDate
+
+    def getExDate(self):
+        return self.exDate
+
+    def setGroupName(self, groupName):
+        if type(groupName) != str:
+            raise Exception("GroupName ne str)")
+        if not re.fullmatch(r'([МБ]-)?[А-Я]+-[1-9][0-9]', groupName):
+            raise Exception("U vas oshibka v nameGroup ejje")
+        self.groupName = groupName
+
+    def getGroupName(self):
+        return self.groupName
 
 
 @dataclass
