@@ -181,14 +181,17 @@ class ExamPoints:
     examPoints: float
     exDate: date
     groupName: str
+    subject: Subject
 
     def __init__(self, value_student: Student, value_inPoints: float,
-                 value_examPoints: float, value_date: date, value_groupName: str):
+                 value_examPoints: float, value_date: date, value_groupName: str,
+                 value_subject: Subject):
         self.setStudent(value_student)
         self.setInPoints(value_inPoints)
         self.setExamPoints(value_examPoints)
         self.setExDate(value_date)
         self.setGroupName(value_groupName)
+        self.setSubject(value_subject)
 
     def setInPoints(self, new_inPoints):
         if type(new_inPoints) != float:
@@ -240,6 +243,14 @@ class ExamPoints:
     def getGroupName(self):
         return self.groupName
 
+    def setSubject(self, value_subject):
+        if type(value_subject) != Subject:
+            raise Exception("GroupName ne str)")
+        self.subject = value_subject
+
+    def getSubject(self):
+        return self.subject
+
 
 @dataclass
 class Exam:
@@ -247,13 +258,15 @@ class Exam:
     examDate: date
     year: str
     lectFio: str
+    group: Group
 
     def __init__(self, value_subject: Subject, value_examDate: date,
-                 value_year: str, value_lectFio: str):
+                 value_year: str, value_lectFio: str, value_group: Group):
         self.setSubject(value_subject)
         self.setExamDate(value_examDate)
         self.setYear(value_year)
         self.setLectFio(value_lectFio)
+        self.setGroup(value_group)
 
     def setSubject(self, new_subject):
         if type(new_subject) != Subject:
@@ -288,3 +301,11 @@ class Exam:
         if not re.fullmatch(pattern, new_lectFio):
             raise Exception("U vas incorrect input")
         self.lectFio = new_lectFio
+
+    def setGroup(self, new_group):
+        if type(new_group) != Group:
+            raise Exception("Konkretno wrong input")
+        self.group = new_group
+
+    def getGroup(self):
+        return self.group
