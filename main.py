@@ -287,8 +287,8 @@ class Exam:
     def setYear(self, new_year):
         if type(new_year) != str:
             raise Exception("Konkretno wrong input")
-        if not re.fullmatch(r'[0-9]{4}-[0-9]{4}', new_year):
-            raise Exception("Fail s godami")
+        # if not re.fullmatch(r'[1-9]{4}-[1-9]{4}', new_year):
+        #     raise Exception("Fail s godami")
         self.year = new_year
 
     def getYear(self):

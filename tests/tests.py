@@ -33,18 +33,20 @@ class TestClass(unittest.TestCase):
     def test_exam_points(self):
         spec = Specialization("ФИИТ")
         group = Group(spec, 2021)
+        subj = Subject("Б1.Б.22", "Основы программирования", 1, 144, spec)
         student = Student("Иннокентьев Владимир", 172531)
         d = date(2021, 1, 10)
-        examPoints = ExamPoints(student, 55.4, 30.0, d, group.name)
+        examPoints = ExamPoints(student, 55.4, 30.0, d, group.name, subj)
         self.assertEqual(student, examPoints.student)
         self.assertEqual(55.4, examPoints.inPoints)
         self.assertEqual(30.0, examPoints.examPoints)
 
     def test_exam(self):
         spec = Specialization("ФИИТ")
+        group = Group(spec, 2021)
         subject = Subject("Б1.Б.22", "Основы программирования", 1, 144, spec)
         d = date(2018, 1, 10)
-        exam = Exam(subject, d, "2018-2019", "Эверстов Владимир Васильевич")
+        exam = Exam(subject, d, "2018-2019", "Эверстов Владимир Васильевич", group)
         self.assertEqual(subject, exam.subject)
         self.assertEqual(d, exam.examDate)
         self.assertEqual("2018-2019", exam.year)
