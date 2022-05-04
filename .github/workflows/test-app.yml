@@ -34,4 +34,4 @@ jobs:
         
     - name: Test program
       run: |
-        python -m unittest
+        python3 -m unittest
